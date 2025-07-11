@@ -1,4 +1,3 @@
-import Header from "../components/Header.jsx";
 import HeroSection from "../components/HeroSection.jsx";
 import AboutSection from "../components/AboutSection.jsx";
 import HowItWorksSection from "../components/HowItWorksSection.jsx";
@@ -11,8 +10,7 @@ import Footer from "../components/Footer.jsx";
 /**
  * Home page component that renders the main sections of the landing page.
  *
- * This component includes the following sections in order:
- * - Header
+ * This component includes:
  * - HeroSection
  * - AboutSection
  * - HowItWorksSection
@@ -22,13 +20,11 @@ import Footer from "../components/Footer.jsx";
  * - ContactSection
  * - Footer
  *
- * @component
  * @returns {JSX.Element} The complete home page layout.
  */
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
-      <Header />
+    <div className="min-h-screen bg-white overflow-x-hidden pt-24">
       <HeroSection />
       <AboutSection />
       <HowItWorksSection />

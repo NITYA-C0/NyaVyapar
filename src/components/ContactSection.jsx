@@ -45,7 +45,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gray-50">
+    <section id="Contact-Us" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
         <motion.div
           className="text-center mb-16"
