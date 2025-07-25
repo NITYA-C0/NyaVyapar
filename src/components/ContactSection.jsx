@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -44,6 +44,36 @@ export default function ContactSection() {
     },
   ];
 
+  const enquiryTypes = [
+    "Buyer",
+    "Farmer",
+    "Partnership",
+    "Other"
+  ];
+
+  const socialLinks = [
+    {
+      icon: <Facebook className="w-5 h-5" />,
+      name: "Facebook",
+      url: "#"
+    },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      name: "Instagram",
+      url: "#"
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      name: "LinkedIn",
+      url: "#"
+    },
+    {
+      icon: <Youtube className="w-5 h-5" />,
+      name: "YouTube",
+      url: "#"
+    }
+  ];
+
   return (
     <section id="Contact-Us" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
@@ -82,54 +112,53 @@ export default function ContactSection() {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-gray-700 mb-2 block">
-                      First Name
+                      Name
                     </label>
                     <input
                       type="text"
-                      placeholder="John"
+                      placeholder="Your Name"
                       className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      required
                     />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-gray-700 mb-2 block">
-                      Last Name
+                      Email/Phone
                     </label>
                     <input
                       type="text"
-                      placeholder="Doe"
+                      placeholder="Email or Phone Number"
                       className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      required
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Email</label>
-                  <input
-                    type="email"
-                    placeholder="john@company.com"
+                  <label className="text-sm font-medium text-gray-700 mb-2 block">Type of Enquiry</label>
+                  <select
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">Company</label>
-                  <input
-                    type="text"
-                    placeholder="Your Company Name"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
+                    required
+                  >
+                    <option value="">Select an option</option>
+                    {enquiryTypes.map((type, index) => (
+                      <option key={index} value={type.toLowerCase()}>{type}</option>
+                    ))}
+                  </select>
                 </div>
                 <div>
                   <label className="text-sm font-medium text-gray-700 mb-2 block">Message</label>
                   <textarea
                     rows={4}
-                    placeholder="Tell us about your requirements..."
+                    placeholder="Write your message here..."
                     className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"
+                    required
                   />
                 </div>
                 <button
                   type="submit"
                   className="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg py-3 text-lg font-semibold flex justify-center items-center group transition-all"
                 >
-                  Send Message
+                  Submit
                   <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
@@ -167,21 +196,40 @@ export default function ContactSection() {
             <div className="bg-green-50 border border-green-200 p-6 rounded-xl">
               <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2 text-green-600" />
-                Business Hours
+                Support Timings
               </h4>
               <div className="space-y-2 text-gray-600 text-sm">
                 <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span className="text-green-600 font-medium">9:00 AM - 6:00 PM</span>
+                  <span>Monday - Saturday</span>
+                  <span className="text-green-600 font-medium">10:00 AM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Saturday</span>
-                  <span className="text-green-600 font-medium">10:00 AM - 4:00 PM</span>
+                  <span>WhatsApp Support</span>
+                  <span className="text-green-600 font-medium">24x7 for registered farmers</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
                   <span className="text-gray-500">Closed</span>
                 </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Follow & Connect</h4>
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                  >
+                    {social.icon}
+                    <span>{social.name}</span>
+                  </a>
+                ))}
               </div>
             </div>
           </motion.div>

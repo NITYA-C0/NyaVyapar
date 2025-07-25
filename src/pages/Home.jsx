@@ -24,7 +24,7 @@ import Footer from "../components/Footer.jsx";
  */
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden pt-24">
+    <div className=" bg-white overflow-x-hidden pt-28">
       <HeroSection />
       <AboutSection />
       <HowItWorksSection />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Apple, Carrot, Wheat, Milk, CheckCircle } from "lucide-react";
+import { Gift, Box, CircleDollarSign, ShoppingBag, CheckCircle } from "lucide-react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -26,32 +26,52 @@ const scaleIn = {
 export default function ProductsSection() {
   const products = [
     {
-      category: "Fruits",
-      icon: <Apple className="w-8 h-8" />,
-      items: ["Apples", "Bananas", "Oranges", "Berries"],
-      color: "red",
-      image: "/images/fresh-fruits.jpg",
+      category: "Premium Makhana (6 Suta)",
+      icon: <Gift className="w-8 h-8" />,
+      description: "Extra large size, great for roasting & gifting",
+      details: [
+        "Avg Price: ₹750–₹1350/kg",
+        "Packaging: 250g | 500g | 1kg",
+        "Best for: Retailers, Ayurvedic stores"
+      ],
+      color: "purple",
+      image: "/images/premium-makhana.jpg",
     },
     {
-      category: "Vegetables",
-      icon: <Carrot className="w-8 h-8" />,
-      items: ["Carrots", "Tomatoes", "Onions", "Greens"],
-      color: "green",
-      image: "/images/vegetables.jpg",
-    },
-    {
-      category: "Grains",
-      icon: <Wheat className="w-8 h-8" />,
-      items: ["Rice", "Wheat", "Barley", "Oats"],
-      color: "yellow",
-      image: "/images/grains.jpg",
-    },
-    {
-      category: "Dairy",
-      icon: <Milk className="w-8 h-8" />,
-      items: ["Milk", "Cheese", "Butter", "Yogurt"],
+      category: "Standard Makhana (Loose)",
+      icon: <Box className="w-8 h-8" />,
+      description: "Medium-size grains for bulk purchases",
+      details: [
+        "Avg Price: ₹450–₹500/kg",
+        "Bulk supply available",
+        "Best for: B2B buyers, wholesalers"
+      ],
       color: "blue",
-      image: "/images/dairy.jpg",
+      image: "/images/standard-makhana.jpg",
+    },
+    {
+      category: "Roasted Makhana",
+      icon: <CircleDollarSign className="w-8 h-8" />,
+      description: "With jeera, pudina, and light salt",
+      details: [
+        "Avg Price: ₹1150/kg",
+        "Ready to eat, healthy snack",
+        "Best for: Modern retail & startups"
+      ],
+      color: "orange",
+      image: "/images/roasted-makhana.jpg",
+    },
+    {
+      category: "Makhana Chivda",
+      icon: <ShoppingBag className="w-8 h-8" />,
+      description: "Mixed with almonds, raisins & spices",
+      details: [
+        "Avg Price: ₹850/kg",
+        "Festive packs & gifting options",
+        "Best for: Online sales & gift shops"
+      ],
+      color: "green",
+      image: "/images/makhana-chivda.jpg",
     },
   ];
 
@@ -69,9 +89,9 @@ export default function ProductsSection() {
           <span className="inline-block bg-orange-100 text-orange-800 mb-4 px-4 py-2 rounded-full text-sm font-semibold">
             Our Products
           </span>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">Fresh From Farm</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">Handpicked. Hygienic. Honest.</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover our wide range of fresh, quality produce sourced directly from trusted farmers
+            NayaVayapar offers carefully sorted, quality-tested Makhana — straight from Bihar's ponds to your shelves
           </p>
         </motion.div>
 
@@ -109,12 +129,13 @@ export default function ProductsSection() {
 
               {/* Title & Items */}
               <div className="p-5">
-                <h3 className="text-xl text-gray-900 font-semibold mb-4">{product.category}</h3>
+                <h3 className="text-xl text-gray-900 font-semibold mb-2">{product.category}</h3>
+                <p className="text-gray-600 mb-4">{product.description}</p>
                 <ul className="space-y-2">
-                  {product.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-center text-gray-600">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                      <span className="text-sm">{item}</span>
+                  {product.details.map((detail, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start text-gray-600">
+                      <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm">{detail}</span>
                     </li>
                   ))}
                 </ul>

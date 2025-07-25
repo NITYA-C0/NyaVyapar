@@ -1,9 +1,9 @@
 import { Leaf, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
-  const quickLinks = ["About Us", "How It Works", "Products", "Contact"];
-  const products = ["Fresh Fruits", "Vegetables", "Grains", "Dairy"];
-  const legalLinks = ["Privacy Policy", "Terms of Service", "Cookie Policy"];
+  const quickLinks = ["About Us", "Our Products", "For Farmers", "For Buyers", "Contact"];
+  const products = ["Premium Makhana (6 Suta)", "Standard Makhana", "Roasted Makhana", "Makhana Chivda"];
+  const legalLinks = ["Privacy Policy", "Terms of Service"];
   const socialIcons = [Facebook, Twitter, Instagram, Linkedin];
 
   return (
@@ -16,12 +16,12 @@ export default function Footer() {
                 <Leaf className="w-6 h-6 text-white" />
               </div>
               <div>
-                <span className="text-xl font-bold">Nya Vayapar</span>
+                <span className="text-xl font-bold">Naya Vayapar</span>
                 <div className="text-xs text-green-400">Farm to Business</div>
               </div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Connecting farms to businesses with transparency, quality, and trust.
+              Empowering farmers and enriching lives by bringing authentic, high-quality Makhana directly from the ponds of Bihar to the world.
             </p>
             <div className="flex space-x-4">
               {socialIcons.map((Icon, index) => (
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-green-400">Products</h4>
+            <h4 className="font-semibold mb-4 text-green-400">Our Products</h4>
             <ul className="space-y-2 text-gray-400">
               {products.map((product) => (
                 <li key={product}>
@@ -65,12 +65,13 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-green-400">Contact</h4>
             <div className="space-y-2 text-gray-400 text-sm">
-              <div>+1 (555) 123-4567</div>
-              <div>hello@nyavayapar.com</div>
+              <div>Rahul Kumar (Area Manager): 8116146987</div>
+              <div>Roshan Kumar (Sales): 8116393432</div>
+              <div>support@nayavayapar.in</div>
               <div>
-                123 Agriculture Street
+                Satnarayan Bhagwan Campus,
                 <br />
-                Farm City, FC 12345
+                Mahadev Sthan, Supaul, Bihar - 852130
               </div>
             </div>
           </div>
@@ -78,7 +79,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 mb-4 md:mb-0">© {new Date().getFullYear()} Nya Vayapar. All rights reserved.</p>
+            <p className="text-gray-400 mb-4 md:mb-0">© {new Date().getFullYear()} Naya Vayapar. All rights reserved.</p>
             <div className="flex space-x-6 text-gray-400 text-sm">
               {legalLinks.map((link) => (
                 <a key={link} href="#" className="hover:text-green-400 transition-colors">
@@ -86,6 +87,9 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+          </div>
+          <div className="mt-4 text-center md:text-left text-gray-500 text-sm">
+            "Gaon se vyapar, vyapar se vikas — yehi hai NayaVayapar ka raasta."
           </div>
         </div>
       </div>

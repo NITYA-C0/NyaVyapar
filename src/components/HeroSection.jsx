@@ -1,7 +1,4 @@
-"use client";
-
 import first1 from "../assets/first1.jpg"; 
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowRight,
@@ -52,13 +49,13 @@ export default function HeroSection() {
 
       {/* Main Content */}
       <motion.div
-        className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 relative"
+        className="w-full px-5 sm:px-6 lg:px-8 relative"
         style={{ y: heroY, opacity: heroOpacity }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center w-full">
           {/* Left Content */}
           <motion.div
-            className="space-y-8"
+            className="space-y-8 max-w-2xl mx-auto lg:mx-0"
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -86,7 +83,7 @@ export default function HeroSection() {
               </motion.h1>
 
               <motion.p
-                className="text-base sm:text-lg lg:text-2xl text-gray-600 leading-relaxed max-w-2xl"
+                className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -198,4 +195,3 @@ export default function HeroSection() {
     </section>
   );
 }
-//       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
