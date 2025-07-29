@@ -5,7 +5,7 @@ import ProductsSection from "../components/ProductsSection.jsx";
 import CTASection from "../components/CTASection.jsx";
 import TestimonialsSection from "../components/TestimonialsSection.jsx";
 import ContactSection from "../components/ContactSection.jsx";
-import Footer from "../components/Footer.jsx";
+// import Footer from "../components/Footer.jsx";
 
 /**
  * Home page component that renders the main sections of the landing page.
@@ -32,7 +32,7 @@ export default function Home() {
       <CTASection />
       <TestimonialsSection />
       <ContactSection />
-      <Footer />
+      
     </div>
   );
 }
