@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Package,
   Star,
@@ -68,18 +70,18 @@ export default function OurProducts() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 mt-16 relative overflow-hidden w-full">
+    <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 mt-16 relative">
       {/* Decorative Blurs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-orange-200/30 to-amber-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-96 right-10 w-96 h-96 bg-gradient-to-r from-yellow-200/30 to-orange-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-gradient-to-r from-amber-200/30 to-yellow-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute -top-20 -left-20 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-r from-orange-200/30 to-amber-200/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 -right-20 w-80 h-80 sm:w-[28rem] sm:h-[28rem] bg-gradient-to-r from-yellow-200/30 to-orange-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-amber-200/30 to-yellow-200/30 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative w-full px-4 py-16 mx-auto">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8 py-16">
         {/* Hero Section */}
-        <div className="text-center mb-20 max-w-7xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg mb-8">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-md mb-8">
             <Leaf className="w-5 h-5 text-green-600" />
             <span className="text-sm font-medium text-gray-700">
               From Bihar's Ponds to Your Shelves
@@ -87,35 +89,35 @@ export default function OurProducts() {
             <Sparkles className="w-5 h-5 text-amber-500" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 bg-clip-text text-transparent mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600 bg-clip-text text-transparent mb-6">
             Our Products
           </h1>
 
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
             Makhana Varieties We Offer
           </h2>
 
-          <div className="flex items-center justify-center gap-4 text-2xl font-semibold text-orange-600 mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-lg sm:text-2xl font-semibold text-orange-600 mb-6">
             <Heart className="w-6 h-6 text-red-500" />
             <span>Handpicked. Hygienic. Honest.</span>
             <Award className="w-6 h-6 text-amber-500" />
           </div>
 
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto font-medium leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto font-medium leading-relaxed">
             NayaVayapar offers carefully sorted, quality-tested Makhana — straight from Bihar's pristine ponds to your premium shelves.
           </p>
         </div>
 
-        {/* Products Grid - Now centered with full width container */}
-        <div className="w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 px-4">
+        {/* Products Grid */}
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full">
           {products.map((product) => (
             <div
               key={product.id}
-              className={`group relative p-6 bg-gradient-to-br ${product.bgGradient} rounded-xl shadow-xl hover:shadow-2xl transition-all`}
+              className={`group relative p-6 bg-gradient-to-br ${product.bgGradient} rounded-xl shadow-lg hover:shadow-2xl transition-all`}
             >
               {product.popular && (
                 <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg">
+                  <span className="inline-flex items-center bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-medium px-3 py-1 rounded-full shadow-md">
                     <Star className="w-3 h-3 mr-1" />
                     Most Popular
                   </span>
@@ -127,20 +129,20 @@ export default function OurProducts() {
                   {product.icon}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{product.name}</h3>
-                  <p className="text-gray-600">{product.description}</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{product.name}</h3>
+                  <p className="text-gray-600 text-sm sm:text-base">{product.description}</p>
                 </div>
               </div>
 
               <div className="mb-4 space-y-4">
                 {/* Price */}
-                <div className="flex items-center gap-3 p-3 bg-white/60 rounded-lg">
-                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
+                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
                     ₹
                   </div>
                   <div>
                     <div className="text-sm text-gray-600">Average Price</div>
-                    <div className="text-xl font-bold text-green-600">{product.price}</div>
+                    <div className="text-lg sm:text-xl font-bold text-green-600">{product.price}</div>
                   </div>
                 </div>
 
@@ -152,7 +154,7 @@ export default function OurProducts() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {product.packaging.map((p, i) => (
-                      <span key={i} className="bg-white/80 px-3 py-1 rounded-full text-sm text-gray-700 shadow-sm">
+                      <span key={i} className="bg-white/90 px-3 py-1 rounded-full text-sm text-gray-700 shadow-sm">
                         {p}
                       </span>
                     ))}
@@ -160,7 +162,7 @@ export default function OurProducts() {
                 </div>
 
                 {/* Best For */}
-                <div className="flex items-center gap-2 font-semibold text-gray-700">
+                <div className="flex flex-wrap items-center gap-2 font-semibold text-gray-700">
                   <Users className="w-5 h-5" />
                   Perfect For: <span className="ml-1 font-medium">{product.bestFor}</span>
                 </div>
@@ -175,7 +177,7 @@ export default function OurProducts() {
                     {product.features.map((feature, i) => (
                       <li key={i} className="flex items-center gap-2">
                         <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${product.gradient}`} />
-                        <span className="text-gray-700">{feature}</span>
+                        <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -185,12 +187,12 @@ export default function OurProducts() {
                 <img
                   src="/placeholder.svg"
                   alt={product.name}
-                  className="w-full h-48 object-cover rounded-xl shadow group-hover:scale-105 transition-transform"
+                  className="w-full h-40 sm:h-48 md:h-56 object-cover rounded-xl shadow group-hover:scale-105 transition-transform"
                 />
 
                 {/* Order Button */}
                 <button
-                  className={`mt-4 w-full h-12 bg-gradient-to-r ${product.gradient} text-white font-semibold rounded-lg flex items-center justify-center gap-2 hover:shadow-lg transition`}
+                  className={`mt-4 w-full h-11 sm:h-12 bg-gradient-to-r ${product.gradient} text-white font-semibold rounded-lg flex items-center justify-center gap-2 hover:shadow-lg transition`}
                 >
                   <ShoppingCart className="w-5 h-5" />
                   Order in Bulk
@@ -201,14 +203,14 @@ export default function OurProducts() {
         </div>
 
         {/* CTA */}
-        <div className="mt-24 text-center space-y-6 max-w-7xl mx-auto">
-          <h3 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+        <div className="mt-20 text-center space-y-6 max-w-3xl mx-auto">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
             Ready to Transform Your Business?
           </h3>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
             Join hundreds of retailers & wholesalers who trust NayaVayapar for premium Makhana supply.
           </p>
-          <div className="flex flex-col lg:flex-row gap-4 justify-center mt-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
             <button className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-semibold hover:scale-105 transition">
               <Star className="w-5 h-5 mr-2 inline" />
               Get Instant Price Sheet

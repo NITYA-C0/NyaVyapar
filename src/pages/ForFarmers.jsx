@@ -15,10 +15,10 @@ import { Link } from "react-router-dom";
 
 export default function FarmersPage() {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 lg:py-36 bg-gradient-to-br from-green-600 to-green-800 text-white overflow-hidden">
-        <div className="container mx-auto px-4 text-center relative z-10">
+      <section className="relative py-20 md:py-28 lg:py-36 bg-gradient-to-br from-green-600 to-green-800 text-white overflow-hidden w-full">
+        <div className="w-full px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4 drop-shadow-lg">
             For Farmers
           </h1>
@@ -37,99 +37,84 @@ export default function FarmersPage() {
         </div>
       </section>
 
-      {/* Why Join NayaVayapar Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">Why Join NayaVayapar?</h2>
+      {/* Why Join Section */}
+      <section className="py-16 md:py-24 w-full">
+        <div className="w-full px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            Why Join NayaVayapar?
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg border-t-4 border-green-500">
-              <div className="p-6 flex flex-col items-center text-center">
-                <Scale className="h-12 w-12 text-green-600 mb-4" />
-                <h3 className="font-semibold text-xl mb-2">Fair & Transparent Pricing</h3>
-                <p className="text-gray-600">
-                  Ensure you get the best value for your hard work with clear and honest pricing.
-                </p>
+            {[
+              {
+                icon: <Scale className="h-12 w-12 text-green-600 mb-4" />,
+                title: "Fair & Transparent Pricing",
+                desc: "Ensure you get the best value for your hard work with clear and honest pricing.",
+              },
+              {
+                icon: <Package className="h-12 w-12 text-green-600 mb-4" />,
+                title: "Assured Buyback of Makhana",
+                desc: "Guaranteed purchase of your Makhana produce, reducing market uncertainty.",
+              },
+              {
+                icon: <GraduationCap className="h-12 w-12 text-green-600 mb-4" />,
+                title: "Training on Sorting, Grading & Packaging",
+                desc: "Enhance your product quality and market appeal with expert training.",
+              },
+              {
+                icon: <MessageCircle className="h-12 w-12 text-green-600 mb-4" />,
+                title: "Helpline with Area Manager Support",
+                desc: "Direct support and guidance from your dedicated Area Manager.",
+              },
+              {
+                icon: <Smartphone className="h-12 w-12 text-green-600 mb-4" />,
+                title: "Mobile App for Listing Products",
+                desc: "Easily list and manage your produce directly from your smartphone.",
+              },
+              {
+                icon: <CheckCircle className="h-12 w-12 text-green-600 mb-4" />,
+                title: "And Many More Benefits!",
+                desc: "Join our growing community and discover all the advantages of NayaVayapar.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg border-t-4 border-green-500 p-6 text-center flex flex-col items-center"
+              >
+                {item.icon}
+                <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
               </div>
-            </div>
-            <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg border-t-4 border-green-500">
-              <div className="p-6 flex flex-col items-center text-center">
-                <Package className="h-12 w-12 text-green-600 mb-4" />
-                <h3 className="font-semibold text-xl mb-2">Assured Buyback of Makhana</h3>
-                <p className="text-gray-600">
-                  Guaranteed purchase of your Makhana produce, reducing market uncertainty.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg border-t-4 border-green-500">
-              <div className="p-6 flex flex-col items-center text-center">
-                <GraduationCap className="h-12 w-12 text-green-600 mb-4" />
-                <h3 className="font-semibold text-xl mb-2">Training on Sorting, Grading & Packaging</h3>
-                <p className="text-gray-600">
-                  Enhance your product quality and market appeal with expert training.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg border-t-4 border-green-500">
-              <div className="p-6 flex flex-col items-center text-center">
-                <MessageCircle className="h-12 w-12 text-green-600 mb-4" />
-                <h3 className="font-semibold text-xl mb-2">Helpline with Area Manager Support</h3>
-                <p className="text-gray-600">Direct support and guidance from your dedicated Area Manager.</p>
-              </div>
-            </div>
-            <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg border-t-4 border-green-500">
-              <div className="p-6 flex flex-col items-center text-center">
-                <Smartphone className="h-12 w-12 text-green-600 mb-4" />
-                <h3 className="font-semibold text-xl mb-2">Mobile App for Listing Products</h3>
-                <p className="text-gray-600">
-                  Easily list and manage your produce directly from your smartphone.
-                </p>
-              </div>
-            </div>
-            <div className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg border-t-4 border-green-500">
-              <div className="p-6 flex flex-col items-center text-center">
-                <CheckCircle className="h-12 w-12 text-green-600 mb-4" />
-                <h3 className="font-semibold text-xl mb-2">And Many More Benefits!</h3>
-                <p className="text-gray-600">
-                  Join our growing community and discover all the advantages of NayaVayapar.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* What You Need to Start Section */}
-      <section className="py-16 md:py-24 bg-gray-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">What You Need to Start:</h2>
+      {/* What You Need Section */}
+      <section className="py-16 md:py-24 bg-gray-100 w-full">
+        <div className="w-full px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+            What You Need to Start:
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white shadow-md rounded-lg border-l-4 border-yellow-500">
-              <div className="p-6 flex items-start gap-4">
-                <Scan className="h-8 w-8 text-yellow-600 shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Aadhaar (for verification)</h3>
-                  <p className="text-gray-600 text-sm">Your unique identification for secure onboarding.</p>
-                </div>
+            <div className="bg-white shadow-md rounded-lg border-l-4 border-yellow-500 p-6 flex items-start gap-4">
+              <Scan className="h-8 w-8 text-yellow-600 shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Aadhaar (for verification)</h3>
+                <p className="text-gray-600 text-sm">Your unique identification for secure onboarding.</p>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg border-l-4 border-yellow-500">
-              <div className="p-6 flex items-start gap-4">
-                <Leaf className="h-8 w-8 text-yellow-600 shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Sample of your produce (for quality tagging)</h3>
-                  <p className="text-gray-600 text-sm">
-                    To ensure quality standards and proper categorization.
-                  </p>
-                </div>
+            <div className="bg-white shadow-md rounded-lg border-l-4 border-yellow-500 p-6 flex items-start gap-4">
+              <Leaf className="h-8 w-8 text-yellow-600 shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Sample of your produce (for quality tagging)</h3>
+                <p className="text-gray-600 text-sm">To ensure quality standards and proper categorization.</p>
               </div>
             </div>
-            <div className="bg-white shadow-md rounded-lg border-l-4 border-yellow-500">
-              <div className="p-6 flex items-start gap-4">
-                <ClipboardList className="h-8 w-8 text-yellow-600 shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Basic details (name, village, contact)</h3>
-                  <p className="text-gray-600 text-sm">Essential information to get you started quickly.</p>
-                </div>
+            <div className="bg-white shadow-md rounded-lg border-l-4 border-yellow-500 p-6 flex items-start gap-4">
+              <ClipboardList className="h-8 w-8 text-yellow-600 shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold text-lg mb-1">Basic details (name, village, contact)</h3>
+                <p className="text-gray-600 text-sm">Essential information to get you started quickly.</p>
               </div>
             </div>
           </div>
@@ -142,9 +127,9 @@ export default function FarmersPage() {
         </div>
       </section>
 
-      {/* Meet Your Area Manager Section */}
-      <section className="py-16 md:py-24 bg-green-700 text-white">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
+      {/* Meet Manager Section */}
+      <section className="py-16 md:py-24 bg-green-700 text-white w-full">
+        <div className="w-full px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Meet Your Area Manager</h2>
           <div className="bg-white text-gray-800 p-8 rounded-lg shadow-xl max-w-md mx-auto">
             <div className="flex flex-col items-center">
@@ -157,26 +142,26 @@ export default function FarmersPage() {
         </div>
       </section>
 
-      {/* Call to Action Buttons */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
+      {/* CTA Buttons */}
+      <section className="py-16 md:py-24 w-full">
+        <div className="w-full px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Ready to Grow?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link 
-              to="/register-farmer" 
-              className="flex items-center justify-center gap-2 h-14 text-lg bg-green-600 hover:bg-green-700 text-white shadow-md rounded-md px-6 py-3 transition-colors"
+            <Link
+              to="/register-farmer"
+              className="flex items-center justify-center gap-2 h-14 text-lg bg-green-600 hover:bg-green-700 text-white shadow-md rounded-md px-6 transition"
             >
               Join as Farmer <ArrowRight className="h-5 w-5" />
             </Link>
-            <Link 
-              to="/download-app" 
-              className="flex items-center justify-center gap-2 h-14 text-lg border border-green-600 text-green-700 hover:bg-green-50 bg-transparent rounded-md px-6 py-3 transition-colors"
+            <Link
+              to="/download-app"
+              className="flex items-center justify-center gap-2 h-14 text-lg border border-green-600 text-green-700 hover:bg-green-50 rounded-md px-6 transition"
             >
               Download Naya Bypar App <Smartphone className="h-5 w-5" />
             </Link>
-            <Link 
-              to="/farmer-rights" 
-              className="flex items-center justify-center gap-2 h-14 text-lg text-gray-700 hover:bg-gray-100 rounded-md px-6 py-3 transition-colors"
+            <Link
+              to="/farmer-rights"
+              className="flex items-center justify-center gap-2 h-14 text-lg text-gray-700 hover:bg-gray-100 rounded-md px-6 transition"
             >
               Know Your Rights <ClipboardList className="h-5 w-5" />
             </Link>
